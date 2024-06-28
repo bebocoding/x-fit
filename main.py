@@ -22,3 +22,8 @@ async def plan(userData: schemas.UserData):
     userData = models.UserData(**dictUserData)
     plan = aiCoach.generatePlan(userData)
     return {"plan": plan}
+
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app)
