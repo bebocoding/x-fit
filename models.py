@@ -1,6 +1,28 @@
 class UserData:
-    def __init__(self, goal: str = None, level: str = None, trainingEnvironmentPreference: str = None, illness: str = None):
+    def __init__(self, 
+                 gender: str = None,
+                 age: int = None,
+                 weight: float = None,
+                 height: float = None,
+                 goal: list = None,
+                 experience: str = None,
+                 bodyFatPercentage: float = None,
+                 muscleMass: float = None,
+                 workoutDurationPreference: str = None,
+                 workoutFrequencyPreference: str = None,
+                 preferredExerciseTypes: list = None,
+                 trainingEnvironmentPreference: list = None,
+                 healthIssues: list = None):
+        self.gender = gender
+        self.age = age
+        self.weight = weight
+        self.height = height
         self.goal = goal
-        self.level = level
+        self.experience = experience
+        self.bodyFatPercentage = bodyFatPercentage
+        self.muscleMass = muscleMass
+        self.workoutDurationPreference = workoutDurationPreference
+        self.workoutFrequencyPreference = workoutFrequencyPreference
+        self.preferredExerciseTypes = preferredExerciseTypes
         self.trainingEnvironmentPreference = trainingEnvironmentPreference
-        self.illness = illness
+        self.healthIssues = healthIssues

@@ -18,7 +18,7 @@ async def root():
 
 @app.post("/plan")
 async def plan(userData: schemas.UserData):
-    userData = models.UserData(goal=userData.Goal, level=userData.Level, 
-                               illness=userData.Illness, trainingEnvironmentPreference=userData.trainingEnvironmentPreference)
+    dictUserData =  userData.model_dump()
+    userData = models.UserData(**dictUserData)
     plan = aiCoach.generatePlan(userData)
     return {"plan": plan}

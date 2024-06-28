@@ -29,12 +29,20 @@ class AiCoach:
     def generateUserPrompt(self, userData:UserData):
 
         userPrompt = ''
-        userPrompt += f"My goal is to {userData.goal}." if userData.goal else ''
-        userPrompt += f"\nI am at {userData.level} level." if userData.level else ''
-        userPrompt += f"\nI like to workout {userData.trainingEnvironmentPreference}." if userData.trainingEnvironmentPreference else ''
-        userPrompt += f"\nI have {userData.illness}." if userData.illness else ''
+        userPrompt += f"I am a {userData.gender}." if userData.gender else ''
+        userPrompt += f"\nMy age is {userData.age}." if userData.age else ''
+        userPrompt += f"\nMy height {userData.height} meters." if userData.height else ''
+        userPrompt += f"\nMy weight is {userData.weight} kg." if userData.weight else ''
+        userPrompt += f"\nMy goal is to {', '.join(userData.goal)}." if userData.goal else ''
+        userPrompt += f"\nI am at {userData.bodyFatPercentage}% fat percentage." if userData.bodyFatPercentage else ''
+        userPrompt += f"\nMy muscle mass is {userData.muscleMass} kg." if userData.muscleMass else ''
+        userPrompt += f"\nI prefer to have a {userData.workoutDurationPreference} min workout." if userData.workoutDurationPreference else ''
+        userPrompt += f"\nI prefer to train {userData.workoutFrequencyPreference}." if userData.workoutFrequencyPreference else ''
+        userPrompt += f"\nI prefer {', '.join(userData.preferredExerciseTypes)} exercise types." if userData.preferredExerciseTypes else ''
+        userPrompt += f"\nI am at {userData.experience} level." if userData.experience else ''
+        userPrompt += f"\nI like to workout {', '.join(userData.trainingEnvironmentPreference)}." if userData.trainingEnvironmentPreference else ''
+        userPrompt += f"\nI have {', '.join(userData.healthIssues)}." if userData.healthIssues else ''
 
-        print(userPrompt)
 
         return userPrompt
     
